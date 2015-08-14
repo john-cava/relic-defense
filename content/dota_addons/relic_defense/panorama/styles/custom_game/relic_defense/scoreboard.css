@@ -1,0 +1,124 @@
+@define SCOREBOARD_WIDTH: 600px;
+@define SCOREBOARD_HEIGHT: 810px;
+
+Panel
+{
+	width: 100%;
+	height: 100%;
+	margin: 0px;
+	padding: 0px;
+}
+
+Label
+{
+	color: #FFFFFF;
+	font-size: 15px;
+	text-overflow: ellipsis;
+	vertical-align: center;
+	horizontal-align: center;
+}
+
+
+/*
+TODO: FIGURE OUT HOW TO MAKE IT ACTUALLY FLY OUT INSTEAD OF INVISIBLE.;
+*/
+
+.scoreboard
+{
+	width: 600px;
+	height: 810px;
+	/*background-color: #666666;*/
+	y: 45px;
+	x: 0px;
+	/* GRADIENT REFERENCE:
+		style, X% Y% Start, X% Y% Finish, From, To
+	*/
+	background-color: gradient( linear, 0% 0%, 50% 0%, from( #33333366 ), to( #00000000 ) );
+	transform: translatex( -600px );
+    transition-property: transform;
+    transition-duration: 0.1s;
+}
+
+.flyout_scoreboard_visible
+{
+	transform: translatex(0px);
+}
+
+
+#scoreboardBackground
+{
+	width: 100%;
+	height: 100%;
+	margin: 10px;
+	background-color: #22222266;
+	border: 2px solid #00000066;
+	flow-children: down;
+}
+
+.scoreboardContainer
+{
+	width: 100%;
+	height: 50%;
+	margin: 10px;
+	flow-children: down;
+
+}
+
+.scoreboardRow
+{
+	width: 100%;
+	height: 24px;
+	background-color: gradient( linear, 50% 0%, 75% 0%, from( #00000066 ), to( #00000000 ) );
+	margin-bottom: 5px;
+	flow-children: right;
+}
+
+.scoreboardRowItem
+{
+	height: 100%;
+	background-color: #333333CC;
+	border: 1px solid #000000CC;
+	margin: 1px;
+}
+
+.scoreboardRowTitle
+{
+	height: 100%;
+	margin: 2px;
+}
+
+.scoreboardRowAvatar
+{
+	width: 22px;
+
+}
+
+.scoreBoardRowName
+{
+	width: 30%;
+}
+
+.scoreBoardRowHero
+{
+	width: 30%;
+}
+
+.scoreBoardRowCreepKills
+{
+	width: 8%;
+}
+
+.scoreBoardRowChampionKills
+{
+	width: 8%;
+}
+
+.scoreBoardRowBossKills
+{
+	width: 8%;
+}
+
+.scoreBoardRowDeaths
+{
+	width: 8%;
+}

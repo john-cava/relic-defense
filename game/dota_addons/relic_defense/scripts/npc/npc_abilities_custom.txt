@@ -1,0 +1,112 @@
+"DOTAAbilities"
+{
+	"Version"		"1"
+	
+	//=================================================================================================================
+	// Creature: Unholy Aura
+	// TODO: change particle effect, localize strings n shit
+	//=================================================================================================================
+	"rd_creature_aura_unholy"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"AbilityName"					"rd_creature_aura_unholy"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
+		"AbilityUnitTargetType" 		"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitTargetTeam" 		"DOTA_UNIT_TARGET_TEAM_BOTH"
+		"AbilityTextureName"			"undying_decay"	
+ 
+  		"Modifiers"
+		{
+			"rd_creature_aura_unholy_giver"
+			{
+				"Passive"		"1"
+				"IsHidden"		"1"
+				"Aura"			"rd_creature_aura_unholy_modifier"
+				"Aura_Radius"	"%aura_radius"
+				"Aura_Teams"	"DOTA_UNIT_TARGET_TEAM_BOTH"
+				"Aura_Types"	"DOTA_UNIT_TARGET_ALL"
+			}
+
+			"rd_creature_aura_unholy_modifier"
+			{
+				"IsDebuff"		"0"
+				"IsPurgable"	"0"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE" "%damage_take_amount"
+				 	"MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE" "%damage_buff_amount"
+				}
+			}
+		}
+		// Special
+		//---------------------------------------------- ---------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"aura_radius"				"450"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"damage_buff_amount"		"20.0 40.0 60.0 80.0 100.0"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"damage_take_amount"		"20.0 40.0 60.0 80.0 100.0"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Creature: Mana burn
+	// TODO: make it work using script idiot
+	//=================================================================================================================
+	"rd_creature_manaburn"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"creature_scripts/generic_abilities"
+		"AbilityName"					"rd_creature_manaburn"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetType" 		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetTeam" 		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+		"AbilityTextureName"			"satyr_soulstealer_mana_burn"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"30.0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"500 600 800 1100 1500"
+		"AbilityCastPoint"				"0.3"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"mana_burnt_pc"			"5.0 10.0 20.0 40.0 80.0"
+			}
+
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"mana_burn_damage"		"50.0"
+			}
+		}
+	}
+}

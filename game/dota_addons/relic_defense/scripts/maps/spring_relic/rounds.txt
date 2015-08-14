@@ -1,0 +1,107 @@
+"round_outline"
+{
+	"PreRoundTimeDefault"			"15"
+	"RoundTimeDefault"				"-1"
+	"PostRoundTimeDefault"			"15"
+	"Endless"				"0"
+	"RoundCount"			"50"
+	"Rounds"
+	{
+		"1"
+		{
+			"RoundTitle"				"rd_round_title_skeletons"
+			"RoundNumber"				"1"
+			"RoundPattern"				"wave"
+			"RoundBreakdown"
+			{
+				"1"
+				{
+					"UnitType"			"npc_rd_skeleton_generic"
+					//Unit count is multiplied by the number of spawners, remember this!
+					"UnitCount"			"35"
+					"UnitClass"			"creep"
+				}
+			}
+		}
+
+		"2"
+		{
+			"RoundNumber"				"2"
+			"RoundTitle"				"rd_round_title_zombies"
+			"RoundPattern"				"wave"
+			"RoundBreakdown"
+			{
+				"1"
+				{
+					"UnitType"			"npc_rd_zombie_generic"
+					"UnitCount"			"15"
+					"UnitClass"			"creep"
+				}
+				"2"
+				{
+					"UnitType"			"npc_rd_zombie_buffer"
+					"UnitCount"			"8"
+					"UnitClass"			"minion"
+					"UnitMinionType"	"npc_rd_zombie_generic"
+					"UnitMinionCount"	"6"
+				}
+			}
+		}
+
+		"3"
+		{
+			"RoundNumber"				"3"
+			"RoundTitle"				"rd_round_title_satyrs"
+			"RoundPattern"				"mob"
+			"RoundBreakdown"
+			{
+				"1"
+				{
+					"UnitType"			"npc_rd_satyr_manaburn"
+					"UnitCount"			"50"
+					"UnitClass"			"creep"
+					"UnitChampChance"	"0.10"
+				}
+			}
+		}
+
+		"4"
+		{
+			"RoundNumber"				"4"
+			"RoundTitle"				"rd_round_title_split_snakes"
+			"RoundPattern"				"wave"
+			"RoundBreakdown"
+			{
+				"1"
+				{
+					"UnitType"			"npc_rd_splitting_snake"
+					"UnitCount"			"50"
+					"UnitClass"			"creep"
+					"UnitChampChance"	"0.10"
+				}
+			}
+		}
+
+		"5"
+		{
+			"RoundNumber"				"5"
+			"RoundTitle"				"rd_round_title_boss_brood"
+			"RoundPattern"				"boss"
+			"RoundBreakdown"
+			{
+				"1"
+				{
+					"UnitType"			"npc_rd_brood_boss"
+					"UnitCount"			"1"
+					"UnitClass"			"boss"
+				}
+				"2"
+				{
+					"UnitType"			"npc_rd_brood_boss_minion"
+					"UnitCount"			"3"
+					"UnitClass"			"minion"
+				}
+			}
+		}
+	}
+}

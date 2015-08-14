@@ -1,0 +1,24 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/custom_game/relic_defense/top_bar.css" />
+	</styles>
+	<scripts>
+		<include src="file://{resources}/scripts/custom_game/relic_defense/top_bar_hero.js" />
+	</scripts>
+	<Panel class="heroScore">
+		<Image hittest="false" id="heroIcon" />
+		<Panel hittest="false" id="goldScore">
+			<Image hittest="false" id="goldScoreIcon" src="file://{resources}/images/custom_game/relic_defense/hud/gold.png" />
+			<Label hittest="false" id="goldScoreText" text="1234567" />
+		</Panel>
+		<Panel hittest="false" id="creepScore">
+			<Label hittest="false" id="creepScoreText" text="123456" />
+		</Panel>
+		<Panel hittest="false" id="damageScore">
+			<Label hittest="false" id="damageScoreText" text="1234567890" />
+		</Panel>
+		<Panel hittest="false" id="resurrScore">
+			<Label hittest="false" id="resurrScoreText" text="123" />
+		</Panel>
+	</Panel>
+</root>

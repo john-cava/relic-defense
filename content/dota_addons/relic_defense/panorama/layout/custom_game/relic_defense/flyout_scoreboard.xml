@@ -1,0 +1,62 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/custom_game/relic_defense/scoreboard.css" />
+	</styles>
+	<scripts>
+		<include src="file://{resources}/scripts/custom_game/relic_defense/scoreboard.js" />
+	</scripts>
+	<Panel class="scoreboard" hittest="false">
+		<Panel id="scoreboardBackground" hittest="false">
+			<Panel id="scoreboardCurrentRoundContainer" class="scoreboardContainer" hittest="false">
+				<Panel class="scoreboardRow">
+					<Panel class="scoreboardRowAvatar">
+						<DOTAAvatarImage class="scoreBoardRowImage" />
+					</Panel>
+					<Panel class="scoreBoardRowName scoreboardRowTitle">
+						<Label class="scoreBoardRowNameLabel" text="Current Round:" />
+					</Panel>
+					<Panel class="scoreBoardRowHero scoreboardRowTitle">
+						<Label class="scoreBoardRowHeroLabel" text="Hero" />
+					</Panel>
+					<Panel class="scoreBoardRowCreepKills scoreboardRowTitle">
+						<Label class="scoreBoardRowCreepKillsLabel" text="K" />
+					</Panel>
+					<Panel class="scoreBoardRowChampionKills scoreboardRowTitle">
+						<Label class="scoreBoardRowChampionKillsLabel" text="C" />
+					</Panel>
+					<Panel class="scoreBoardRowBossKills scoreboardRowTitle">
+						<Label class="scoreBoardRowBossKillsLabel" text="B" />
+					</Panel>
+					<Panel class="scoreBoardRowDeaths scoreboardRowTitle">
+						<Label class="scoreBoardRowDeathsLabel" text="D" />
+					</Panel>
+				</Panel>
+			</Panel>
+			<Panel id="scoreboardOverallRoundContainer" class="scoreboardContainer" hittest="false">
+				<Panel class="scoreboardRow">
+					<Panel class="scoreboardRowAvatar">
+						<DOTAAvatarImage class="scoreBoardRowImage" />
+					</Panel>
+					<Panel class="scoreBoardRowName scoreboardRowTitle">
+						<Label class="scoreBoardRowNameLabel" text="Overall:" />
+					</Panel>
+					<Panel class="scoreBoardRowHero scoreboardRowTitle">
+						<Label class="scoreBoardRowHeroLabel" text="Hero" />
+					</Panel>
+					<Panel class="scoreBoardRowCreepKills scoreboardRowTitle">
+						<Label class="scoreBoardRowCreepKillsLabel" text="K" />
+					</Panel>
+					<Panel class="scoreBoardRowChampionKills scoreboardRowTitle">
+						<Label class="scoreBoardRowChampionKillsLabel" text="C" />
+					</Panel>
+					<Panel class="scoreBoardRowBossKills scoreboardRowTitle">
+						<Label class="scoreBoardRowBossKillsLabel" text="B" />
+					</Panel>
+					<Panel class="scoreBoardRowDeaths scoreboardRowTitle">
+						<Label class="scoreBoardRowDeathsLabel" text="D" />
+					</Panel>
+				</Panel>
+			</Panel>
+		</Panel>
+	</Panel>
+</root>

@@ -1,0 +1,31 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/custom_game/relic_defense/scoreboard.css" />
+	</styles>
+	<scripts>
+		<include src="file://{resources}/scripts/custom_game/relic_defense/scoreboardRow.js" />
+	</scripts>
+	<Panel class="scoreboardRow">
+		<Panel class="scoreboardRowAvatar scoreboardRowItem">
+			<DOTAAvatarImage id="scoreBoardRowImage"/>
+		</Panel>
+		<Panel class="scoreBoardRowName scoreboardRowItem">
+			<Label id="scoreBoardRowNameLabel" text="xd" />
+		</Panel>
+		<Panel class="scoreBoardRowHero scoreboardRowItem">
+			<Label id="scoreBoardRowHeroLabel" text="Hero" />
+		</Panel>
+		<Panel class="scoreBoardRowCreepKills scoreboardRowItem">
+			<Label id="scoreBoardRowCreepKillsLabel" text="10000" />
+		</Panel>
+		<Panel class="scoreBoardRowChampionKills scoreboardRowItem">
+			<Label id="scoreBoardRowChampionKillsLabel" text="Champs" />
+		</Panel>
+		<Panel class="scoreBoardRowBossKills scoreboardRowItem">
+			<Label id="scoreBoardRowBossKillsLabel" text="Boss" />
+		</Panel>
+		<Panel class="scoreBoardRowDeaths scoreboardRowItem">
+			<Label id="scoreBoardRowDeathsLabel" text="Deaths" />
+		</Panel>
+	</Panel>
+</root>

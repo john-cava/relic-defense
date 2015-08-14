@@ -1,0 +1,8 @@
+spring_relic
+{
+	material materials/overviews/spring_relic.vmat
+	pos_x -4096
+	pos_y 4096
+	scale 8.000
+}
+

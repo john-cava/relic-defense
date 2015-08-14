@@ -1,0 +1,13 @@
+"DOTAHeroes"
+{
+	//=================================================================================================================
+	// HERO: Omniknight!
+	// TODO: Abilities, hero upgrades, etc
+	//=================================================================================================================
+	"npc_rd_hero_omniknight"
+	{
+		"override_hero"				"npc_dota_hero_omniknight"
+		//"Ability1"					"templar_assassin_refraction_holdout"		// Ability 1
+		"VisionNighttimeRange"		"1800"										// Range of vision at night time.
+	}
+}
