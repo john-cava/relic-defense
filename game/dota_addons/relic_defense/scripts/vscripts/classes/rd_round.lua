@@ -29,10 +29,12 @@ function cRDRound:Create(roundInfo)
 	self._roundBreakdown = {}
 	self._listenHandles = {};
 
-	--todo: isn't this _rd = ri.rb?
+	self._roundBreakdown = roundInfo.RoundBreakdown;
+	--[[todo: isn't this _rd = ri.rb?
 	for index, unitData in pairs(roundInfo.RoundBreakdown) do
 		self._roundBreakdown[index] = unitData;
 	end
+	]]--
 
 	GameRules:GetGameModeEntity():SetThink( "OnThink", self, "RD_Round_" .. self._roundNumber .. "_Think", 1 );
 end
@@ -232,11 +234,11 @@ function cRDRound:_GenerateUnitPackets()
 
 
 	for _, unitData in pairs(self._roundBreakdown) do
+
 		-- I HAVE NO IDEA WHY THIS CALLBACK FUNCTION EXISTS LOL
 		PrecacheUnitByNameAsync(unitData.UnitType, function ( blowme ) end);
-		--TODO: Last unit waves rounded up, rest rounded down
+
 		self:_GeneratePacketsForSpawner(unitData, true);
-		--self:_GeneratePacketsForUnit(unitData, numWaves);
 	end
 
 end
@@ -329,71 +331,6 @@ function cRDRound:_GetNumUnitsTypes()
 
 	return self._unitsNumType;
 end
-
---[[function cRDRound:_GenerateUnitPackets()
-	local numSpawners = #self._availableSpawners;
-	local totalUnits = 0;
-	local pairedUnits = false;
-	local pairedUnitsCombos = {};
-	for _, unitData in pairs(self._roundBreakdown) do
-		totalUnits = totalUnits + (unitData.UnitCount or 0);
-		totalUnits = totalUnits + (unitData.UnitMinionCount or 0);
-		if unitData.UnitMinions then
-			pairedUnits = true;
-		end
-	end
-	local unitCounts = {};
-	local averageMobs = totalUnits / numSpawners;
-
-
-	if not pairedUnits then
-
-		for i=1, numSpawners do
-			unitCounts[i] = averageMobs;
-		end
-
-		if totalUnits % numSpawners > 0 then
-			--todo: cant i do this in the if? luas weird xd
-			local rem = totalUnits % numSpawners;
-			while rem > 0 do
-				local index = RandomInt(1, numSpawners)
-				unitCounts[index] = unitCounts[index] + 1
-				rem = rem - 1 
-			end
-		end
-
-		for _, unitData in pairs(self._roundBreakdown) do
-			if self._roundPattern == "wave" or self._roundPattern == "mob" then
-				--waves act as discrete chunks of units instead of a continuous stream, best represented as large packets
-				--mobs act like a constant stream of units so are best suited by small waves
-				local waves = 0;
-				if self._roundPattern == "wave" then
-					waves = RandomInt(4, 6);
-				else
-					waves = RandomInt(10, 12);
-				end
-
-				for i=1, #unitCounts do
-					local runningTotal = unitCounts[i];
-					for j=1, waves do
-						--is it gonna split nicely?
-						runningTotal = runningTotal - math.floor(unitCounts[i] / waves);
-						table.insert(self._unitPackets, {i, unitData.UnitType, math.floor(unitCounts[i] / waves)});
-					end
-					if runningTotal > 0 then
-						table.insert(self._unitPackets, {i, unitData.UnitType, runningTotal});
-					end
-				end
-			elseif self._roundPattern == "boss" then
-				--boss rounds act weird :(
-
-			else
-			end
-		end
-	else
-	end
-end
-]]--
 
 function cRDRound:_PushPacketsToSpawners()
 	while #self._unitPackets > 0 do

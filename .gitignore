@@ -1,0 +1,12 @@
+relic-defense.sublime-workspace
+relic-defense.sublime-project
+*.vmat_c
+*.vtex_c
+*.vcss_c
+*.vjs_c
+*.vxml_c
+*.vmdl_c
+*.vmesh_c
+*.vphys_c
+game/dota_addons/relic_defense/tools_asset_info.bin
+game/dota_addons/relic_defense/tools_thumbnail_cache.bin

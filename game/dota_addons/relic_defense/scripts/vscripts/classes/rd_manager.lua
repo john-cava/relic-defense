@@ -150,16 +150,14 @@ function cRDManager:_LoadRoundConfig()
 	end
 end
 
---TODO: THIS SHITS STILL BROKEN
 function cRDManager:_UpdatePlayerStats()
 	if not self._created then
 		print("ERROR: Calling Manager functions before creating it! (cRDManager:_UpdatePlayerStats)");
 		return;
 	end
+
 	local newStats = self._roundObject:GetPlayerStats();
-	--DeepPrintTable(self._playerStats);
-	--print("========================");
-	--DeepPrintTable(newStats);
+
 	for playerID, stats in pairs(newStats) do
 		if not self._playerStats[playerID] then
 			local stats = {}
@@ -173,7 +171,6 @@ function cRDManager:_UpdatePlayerStats()
 		end
 
 		for stat, value in pairs(stats) do
-			--print("_playerStats[" .. playerID .. "][" .. stat .."] += " .. value)
 			self._playerStats[playerID][stat] = self._playerStats[playerID][stat] + value;
 		end
 	end
