@@ -19,3 +19,6 @@ relic-defense.sublime-project
 *.vphys_c
 game/dota_addons/relic_defense/tools_asset_info.bin
 game/dota_addons/relic_defense/tools_thumbnail_cache.bin
+*.vpk
+*.vxml_c
+*.vxml_c
