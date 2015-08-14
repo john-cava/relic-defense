@@ -18,7 +18,7 @@
 				{
 					"UnitType"			"npc_rd_skeleton_generic"
 					//Unit count is multiplied by the number of spawners, remember this!
-					"UnitCount"			"35"
+					"UnitCount"			"25"
 					"UnitClass"			"creep"
 				}
 			}
@@ -34,14 +34,14 @@
 				"1"
 				{
 					"UnitType"			"npc_rd_zombie_generic"
-					"UnitCount"			"15"
+					"UnitCount"			"12"
 					"UnitClass"			"creep"
 				}
 				"2"
 				{
 					"UnitType"			"npc_rd_zombie_buffer"
 					"UnitCount"			"8"
-					"UnitClass"			"minion"
+					"UnitClass"			"creep"
 					"UnitMinionType"	"npc_rd_zombie_generic"
 					"UnitMinionCount"	"6"
 				}
@@ -58,7 +58,7 @@
 				"1"
 				{
 					"UnitType"			"npc_rd_satyr_manaburn"
-					"UnitCount"			"50"
+					"UnitCount"			"32"
 					"UnitClass"			"creep"
 					"UnitChampChance"	"0.10"
 				}
@@ -75,7 +75,7 @@
 				"1"
 				{
 					"UnitType"			"npc_rd_splitting_snake"
-					"UnitCount"			"50"
+					"UnitCount"			"4"
 					"UnitClass"			"creep"
 					"UnitChampChance"	"0.10"
 				}

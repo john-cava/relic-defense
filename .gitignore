@@ -17,8 +17,7 @@ relic-defense.sublime-project
 *.vmdl_c
 *.vmesh_c
 *.vphys_c
+*.vpk
 game/dota_addons/relic_defense/tools_asset_info.bin
 game/dota_addons/relic_defense/tools_thumbnail_cache.bin
-*.vpk
-*.vxml_c
-*.vxml_c
+content/dota_addons/relic_defense/materials/overviews/spring_relic.tga

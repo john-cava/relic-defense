@@ -346,7 +346,7 @@ function cRDRound:_IncrementRound(roundTo)
 	self._roundStatus = roundTo or self._roundStatus + 1;
 
 	print(string .. "->" .. self._roundStatus .. ")");
-	self._roundCountdown = self._roundTimes[self._roundStatus];
+	self._roundCountdown = self._roundTimes[self._roundStatus] or -1;
 
 	CustomNetTables:SetTableValue("round_status", "round_status", { status = self:Status() });
 
