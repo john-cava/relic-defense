@@ -1,5 +1,14 @@
 relic-defense.sublime-workspace
 relic-defense.sublime-project
+*.dmx
+*.vmat
+*.vtex
+*.vcss
+*.vjs
+*.vxml
+*.vmdl
+*.vmesh
+*.vphys
 *.vmat_c
 *.vtex_c
 *.vcss_c
