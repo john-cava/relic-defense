@@ -16,7 +16,11 @@ end
 
 --Hidden if we're not gonna do anything
 function modifier_creature_passive_split:IsHidden()
-	return (self:GetStackCount() == 0)
+	if self:GetStackCount() == 0 then
+		return true
+	else
+		return false
+	end
 end
 
 --On creation to actually set stack size
@@ -43,26 +47,27 @@ function modifier_creature_passive_split:OnDeath( params )
 	if IsServer() then
 
 		--DO THEY INTO EXIST?
-		if self:GetCaster() == nil then
-			print("FAIL 1")
+		if not self:GetCaster() then
 			return 0
 		end
 
 		--DO THEY INTO NOT BREAK?
 		if self:GetCaster():PassivesDisabled() then
-			print("FAIL 2")
+			return 0
+		end
+
+		--DO THEY INTO NEED THIS?
+		if self:GetStackCount() == 0 then
 			return 0
 		end
 
 		--DO THEY INTO ACTUALLY CORRECT UNIT?
 		if self:GetCaster() ~= self:GetParent() then
-			print("FAIL 3")
 			return 0
 		end
 
 		--DO THEY ACTUALLY ARE CORRECT UNIT?
-		if self:GetCaster() == params.unit then
-			print("FAIL 4")
+		if self:GetCaster() ~= params.unit then
 			return 0
 		end
 
@@ -70,21 +75,28 @@ function modifier_creature_passive_split:OnDeath( params )
 		local sClassname = hOwner:GetUnitName();
 
 		local nStacksToGive = self:GetStackCount() - 1;
-		local nFactor = (self.nUnitsToCreate ^ (self.nSplitTimes - self:GetStackCount()))
+		--local nFactor = (self.nUnitsToCreate ^ (self.nSplitTimes - self:GetStackCount()));
+		local nFactor = math.min(self.nUnitsToCreate / self:GetStackCount(), 10);
+		print(nFactor);
 
 		for i=1, self.nUnitsToCreate do
 			local hEnt = CreateUnitByName(sClassname, hOwner:GetOrigin(), true, nil, nil, hOwner:GetTeamNumber());
 			if hEnt then
-				if nStacksToGive > 0 then
+				if not hEnt:HasAbility("rd_creature_passive_split") then
 					hEnt:AddAbility("rd_creature_passive_split");
-					hEnt:SetModifierStackCount("modifier_creature_passive_split", self:GetCaster(), nStacksToGive);
-					hEnt:SetBaseMaxHealth(math.floor(hEnt:GetBaseMaxHealth() / nFactor));
-					hEnt:SetBaseDamageMin(math.floor(hEnt:GetBaseDamageMin() / nFactor));
-					hEnt:SetBaseDamageMax(math.floor(hEnt:GetBaseDamageMax() / nFactor));
-					hEnt:SetBaseAttackTime(hEnt:GetBaseAttackTime() / nFactor);
 				end
-			else
+
+				hEnt:SetModifierStackCount("modifier_creature_passive_split", hEnt, nStacksToGive);
+				hEnt:SetBaseMaxHealth(math.floor(hEnt:GetBaseMaxHealth() / nFactor));
+				hEnt:SetBaseDamageMin(math.floor(hEnt:GetBaseDamageMin() / nFactor));
+				hEnt:SetBaseDamageMax(math.floor(hEnt:GetBaseDamageMax() / nFactor));
+				hEnt:SetBaseAttackTime(hEnt:GetBaseAttackTime() / nFactor);
+				hEnt:SetBaseMoveSpeed(hEnt:GetBaseMoveSpeed() + (hEnt:GetBaseMoveSpeed() / 4 * nFactor))
+				hEnt:SetModelScale(hEnt:GetModelScale() / nFactor);
+				hEnt:SetInitialGoalEntity(hOwner:GetInitialGoalEntity());
 			end
 		end
 	end
+
+	return 0
 end

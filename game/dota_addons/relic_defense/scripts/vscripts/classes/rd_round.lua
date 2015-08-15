@@ -123,7 +123,7 @@ function cRDRound:OnEntityKilled(eventInfo)
 	end
 
 	if help then 
-		print("ERROR: Unit killed that doesn't belong to a spawner! (" .. killedUnit:GetClassname() .. ") Huh? CRDRound:OnEntityKilled");
+		print("ERROR: Unit killed that doesn't belong to a spawner! (" .. killedUnit:GetUnitName() .. ") Huh? CRDRound:OnEntityKilled");
 	end
 
 	local attackerUnit = EntIndexToHScript( eventInfo.entindex_attacker or -1 );
