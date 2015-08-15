@@ -60,15 +60,12 @@ end
 
 --[[===============================================================================================
 Split: When the unit dies, the unit turns into multiple smaller versions of itself
-Most of the work is actually done by the modifier (rd_modifier_creature_passive_split.lua)
+Most of the work is actually done by the modifier (modifier_creature_passive_split.lua)
 ===============================================================================================]]--
 
 rd_creature_passive_split = class({})
-LinkLuaModifier( "rd_modifier_creature_passive_split", "creature_scripts", LUA_MODIFIER_MOTION_NONE )
+LinkLuaModifier( "modifier_creature_passive_split", "creature_scripts/modifier_creature_passive_split", LUA_MODIFIER_MOTION_NONE )
 
-function rd_creature_passive_split:OnOwnerSpawned()
-	if IsServer() then
-		local hEnt = self:GetParent();
-		hEnt:AddNewModifier(hEnt, self, "rd_creature_passive_split_modifier", nil)
-	end
+function rd_creature_passive_split:GetIntrinsicModifierName()
+	return "modifier_creature_passive_split"
 end

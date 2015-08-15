@@ -44,6 +44,7 @@ function cRDGM:InitGameMode()
 
 	Convars:RegisterCommand( "rd_debug_reload_spawners", function(...) return self:_ccReloadSpawnpoints( ... ) end, "Tell the round manager to refind it's spawn points.", FCVAR_CHEAT );
 	Convars:RegisterCommand( "rd_debug_skip_round", function(...) return self:_ccSkipToNextRound( ... ) end, "Skip the current round", FCVAR_CHEAT );
+	Convars:RegisterCommand( "rd_debug_skip_to_round", function(...) return self:_ccSkipToRoundNum( ... ) end, "Skip to the specified round number", FCVAR_CHEAT );
 	Convars:RegisterCommand( "rd_debug_print_spawner", function(...) return self:_ccDebugSpawners( ... ) end, "Debug Print every spawner", FCVAR_CHEAT );
 	Convars:RegisterCommand( "rd_debug_print_round", function(...) return self:_ccDebugRound( ... ) end, "Debug Print the current round", FCVAR_CHEAT );
 	
@@ -86,6 +87,12 @@ end
 function cRDGM:_ccSkipToNextRound( cmdName )
 	cRoundManager:NextRound();
 end
+
+function cRDGM:_ccSkipToRoundNum( cmdName, ... )
+	local args = {...}
+	cRoundManager:GotoRound(args[1])
+end
+
 function cRDGM:_ccReloadSpawnpoints( cmdName )
 	cRoundManager:FindSpawners();
 end
@@ -97,6 +104,9 @@ end
 function cRDGM:_ccDebugRound( cmdName )
 	cRoundManager:GetCurrentRound():Debug();
 end
+
+
+
 --[[
 function cRDGM:_cvDebugCurrentRound( cmdName )
 	cRoundManager:CurrentRound():Debug();

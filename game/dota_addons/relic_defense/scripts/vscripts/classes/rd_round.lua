@@ -169,7 +169,7 @@ function cRDRound:OnThink()
 		--Daytime
 		GameRules:SetTimeOfDay(0.45)
 		self._roundCountdown = self._roundCountdown - 0.20;
-		if self._roundCountdown <= 0 then
+		if self._roundCountdown <= 0 and self._roundCountdown > -1 then
 			self: _IncrementRound();
 		end
 	end

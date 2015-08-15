@@ -17,7 +17,7 @@
 		//Buildings
 		"npc_dota_building_altar"					"Shrine of Faith"
 		"npc_dota_fort_relic"						"The Relic"
-		"npc_dota_holdout_tower"
+		"npc_dota_holdout_tower"					"Tower"
 
 
 		//Boons
@@ -31,7 +31,6 @@
 		//Unit Abilities
 		"rd_creature_aura_unholy"					"Unholy Aura"
 		"rd_creature_manaburn"						"Mana Burn"
-		""
 
 		//Rounds
 		"rd_round_title_skeletons"					"Spooked Solid"
