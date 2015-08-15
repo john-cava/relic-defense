@@ -59,5 +59,13 @@ function rd_creature_manaburn:OnSpellStart()
 end
 
 --[[===============================================================================================
-
+Split: When the unit dies, the unit turns into multiple smaller versions of itself
+Most of the work is actually done by the modifier (modifier_creature_passive_split.lua)
 ===============================================================================================]]--
+
+rd_creature_passive_split = class({})
+LinkLuaModifier( "modifier_creature_passive_split", "creature_scripts/modifier_creature_passive_split", LUA_MODIFIER_MOTION_NONE )
+
+function rd_creature_passive_split:GetIntrinsicModifierName()
+	return "modifier_creature_passive_split"
+end

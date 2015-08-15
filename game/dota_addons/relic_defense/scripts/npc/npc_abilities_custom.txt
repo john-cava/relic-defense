@@ -108,4 +108,35 @@
 			}
 		}
 	}
+
+	//=================================================================================================================
+	// Creature: Split On Death
+	//=================================================================================================================
+	"rd_creature_passive_split"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"creature_scripts/generic_abilities"
+		"AbilityName"					"rd_creature_passive_split"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"mud_golem_rock_destroy"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"split_num_times"		"2 3 5 8 12"
+			}
+
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"num_units_make"		"3 3 4 5 7"
+			}
+		}
+	}
 }

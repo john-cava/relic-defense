@@ -123,7 +123,7 @@ function cRDRound:OnEntityKilled(eventInfo)
 	end
 
 	if help then 
-		print("ERROR: Unit killed that doesn't belong to a spawner! (" .. killedUnit:GetClassname() .. ") Huh? CRDRound:OnEntityKilled");
+		print("ERROR: Unit killed that doesn't belong to a spawner! (" .. killedUnit:GetUnitName() .. ") Huh? CRDRound:OnEntityKilled");
 	end
 
 	local attackerUnit = EntIndexToHScript( eventInfo.entindex_attacker or -1 );
@@ -169,7 +169,7 @@ function cRDRound:OnThink()
 		--Daytime
 		GameRules:SetTimeOfDay(0.45)
 		self._roundCountdown = self._roundCountdown - 0.20;
-		if self._roundCountdown <= 0 then
+		if self._roundCountdown <= 0 and self._roundCountdown > -1 then
 			self: _IncrementRound();
 		end
 	end
@@ -346,7 +346,7 @@ function cRDRound:_IncrementRound(roundTo)
 	self._roundStatus = roundTo or self._roundStatus + 1;
 
 	print(string .. "->" .. self._roundStatus .. ")");
-	self._roundCountdown = self._roundTimes[self._roundStatus];
+	self._roundCountdown = self._roundTimes[self._roundStatus] or -1;
 
 	CustomNetTables:SetTableValue("round_status", "round_status", { status = self:Status() });
 

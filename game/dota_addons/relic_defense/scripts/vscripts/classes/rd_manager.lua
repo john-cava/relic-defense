@@ -95,7 +95,12 @@ function cRDManager:NextRound()
 	self:_NextRound(false);
 end
 
-function cRDManager:_NextRound(boolWait)
+function cRDManager:GotoRound(nRoundNumber)
+	self._roundCount = nRoundNumber - 1
+	self:_NextRound(false);
+end
+
+function cRDManager:_NextRound(bWait)
 	if not self._created then
 		print("ERROR: Calling Manager functions before creating it! (cRDManager:_NextRound)");
 		return nil;
@@ -111,7 +116,7 @@ function cRDManager:_NextRound(boolWait)
 	
 	if self._roundObject then
 		self._roundObject:Activate();
-		if not boolWait then
+		if not bWait then
 			self._roundObject:Start();
 		end
 	else
