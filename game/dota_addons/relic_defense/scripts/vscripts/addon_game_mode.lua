@@ -90,7 +90,7 @@ end
 
 function cRDGM:_ccSkipToRoundNum( cmdName, ... )
 	local args = {...}
-	cRoundManager:GotoRound(args[1])
+	cRoundManager:GotoRound(args[1] or 1)
 end
 
 function cRDGM:_ccReloadSpawnpoints( cmdName )
