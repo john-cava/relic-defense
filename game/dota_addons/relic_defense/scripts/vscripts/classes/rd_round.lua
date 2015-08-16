@@ -30,11 +30,6 @@ function cRDRound:Create(roundInfo)
 	self._listenHandles = {};
 
 	self._roundBreakdown = roundInfo.RoundBreakdown;
-	--[[todo: isn't this _rd = ri.rb?
-	for index, unitData in pairs(roundInfo.RoundBreakdown) do
-		self._roundBreakdown[index] = unitData;
-	end
-	]]--
 
 	GameRules:GetGameModeEntity():SetThink( "OnThink", self, "RD_Round_" .. self._roundNumber .. "_Think", 1 );
 end
@@ -42,8 +37,8 @@ end
 function cRDRound:Activate()
 	self:_GenerateUnitPackets();
 	self:_PushPacketsToSpawners();
-	--I should dynamic wrap this (TODO)
-	table.insert(self._listenHandles, ListenToGameEvent( "entity_killed", cRDRound.OnEntityKilled, self ))
+	
+	table.insert(self._listenHandles, ListenToGameEvent( "entity_killed", Dynamic_Wrap(cRDRound, 'OnEntityKilled'), self ))
 
 	for playerID=-1, PlayerResource:GetPlayerCount() - 1 do
 		local stats = {}

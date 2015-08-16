@@ -2,12 +2,12 @@
 Mana Burn: You know. Burns mana. Does damage based on the mana burnt. Ez stuff.
 ===============================================================================================]]--
 
-rd_creature_manaburn = class({})
+creature_ability_manaburn = class({})
 
 --To stop manaburn on targets with no mana (i.e useless)
-function rd_creature_manaburn:OnAbilityPhaseStart()
+function creature_ability_manaburn:OnAbilityPhaseStart()
 	local hTarget = self:GetCursorTarget()
-	if hTarget:GetMaxMana() == 0 then
+	if hTarget:GetMaxMana() == 0 or hTarget:GetMana() == 0 then
 		return false
 	end
 
@@ -15,7 +15,7 @@ function rd_creature_manaburn:OnAbilityPhaseStart()
 end
 
 --Actual meat of spell
-function rd_creature_manaburn:OnSpellStart()
+function creature_ability_manaburn:OnSpellStart()
 	local hCaster = self:GetCaster()
 	local hTarget = self:GetCursorTarget()
 	if IsServer() then
@@ -54,8 +54,7 @@ function rd_creature_manaburn:OnSpellStart()
 	ParticleManager:SetParticleControl( nFXIndex, 0, hTarget:GetOrigin() )
 	ParticleManager:ReleaseParticleIndex( nFXIndex )
 
-	--TODO: figure out how to get into vsndevts files to find the satyr burn sound instead
-	EmitSoundOnLocationWithCaster(hTarget:GetOrigin(), "Hero_NyxAssassin.ManaBurn.Target", hCaster )
+	EmitSoundOnLocationWithCaster(hTarget:GetOrigin(), "n_creep_SatyrSoulstealer.ManaBurn", hCaster )
 end
 
 --[[===============================================================================================
@@ -63,9 +62,9 @@ Split: When the unit dies, the unit turns into multiple smaller versions of itse
 Most of the work is actually done by the modifier (modifier_creature_passive_split.lua)
 ===============================================================================================]]--
 
-rd_creature_passive_split = class({})
+creature_passive_split = class({})
 LinkLuaModifier( "modifier_creature_passive_split", "creature_scripts/modifier_creature_passive_split", LUA_MODIFIER_MOTION_NONE )
 
-function rd_creature_passive_split:GetIntrinsicModifierName()
+function creature_passive_split:GetIntrinsicModifierName()
 	return "modifier_creature_passive_split"
 end

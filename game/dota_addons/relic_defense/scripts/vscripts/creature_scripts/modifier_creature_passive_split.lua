@@ -36,14 +36,6 @@ end
 
 function modifier_creature_passive_split:OnDeath( params )
 
-
-	--[[
-	print("============================")
-	for key, value in pairs(params) do
-		print(key .. " \t = \t " .. tostring(value) .. " (" .. type(value) .. ")")
-	end
-	print("============================")
-	]]--
 	if IsServer() then
 
 		--DO THEY INTO EXIST?
@@ -82,8 +74,8 @@ function modifier_creature_passive_split:OnDeath( params )
 		for i=1, self.nUnitsToCreate do
 			local hEnt = CreateUnitByName(sClassname, hOwner:GetOrigin(), true, nil, nil, hOwner:GetTeamNumber());
 			if hEnt then
-				if not hEnt:HasAbility("rd_creature_passive_split") then
-					hEnt:AddAbility("rd_creature_passive_split");
+				if not hEnt:HasAbility("creature_passive_split") then
+					hEnt:AddAbility("creature_passive_split");
 				end
 
 				hEnt:SetModifierStackCount("modifier_creature_passive_split", hEnt, nStacksToGive);

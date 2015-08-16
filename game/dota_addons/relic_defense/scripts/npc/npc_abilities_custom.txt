@@ -6,12 +6,12 @@
 	// Creature: Unholy Aura
 	// TODO: change particle effect, localize strings n shit
 	//=================================================================================================================
-	"rd_creature_aura_unholy"
+	"creature_aura_unholy"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"ability_lua"
-		"AbilityName"					"rd_creature_aura_unholy"
+		"AbilityName"					"creature_aura_unholy"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
 		"AbilityUnitTargetType" 		"DOTA_UNIT_TARGET_ALL"
 		"AbilityUnitTargetTeam" 		"DOTA_UNIT_TARGET_TEAM_BOTH"
@@ -19,17 +19,17 @@
  
   		"Modifiers"
 		{
-			"rd_creature_aura_unholy_giver"
+			"creature_aura_unholy_giver"
 			{
 				"Passive"		"1"
 				"IsHidden"		"1"
-				"Aura"			"rd_creature_aura_unholy_modifier"
+				"Aura"			"creature_aura_unholy_modifier"
 				"Aura_Radius"	"%aura_radius"
 				"Aura_Teams"	"DOTA_UNIT_TARGET_TEAM_BOTH"
 				"Aura_Types"	"DOTA_UNIT_TARGET_ALL"
 			}
 
-			"rd_creature_aura_unholy_modifier"
+			"creature_aura_unholy_modifier"
 			{
 				"IsDebuff"		"0"
 				"IsPurgable"	"0"
@@ -65,13 +65,13 @@
 	//=================================================================================================================
 	// Creature: Mana burn
 	//=================================================================================================================
-	"rd_creature_manaburn"
+	"creature_ability_manaburn"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"ability_lua"
 		"ScriptFile"					"creature_scripts/generic_abilities"
-		"AbilityName"					"rd_creature_manaburn"
+		"AbilityName"					"creature_ability_manaburn"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetType" 		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitTargetTeam" 		"DOTA_UNIT_TARGET_TEAM_ENEMY"
@@ -112,13 +112,13 @@
 	//=================================================================================================================
 	// Creature: Split On Death
 	//=================================================================================================================
-	"rd_creature_passive_split"
+	"creature_passive_split"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"ability_lua"
 		"ScriptFile"					"creature_scripts/generic_abilities"
-		"AbilityName"					"rd_creature_passive_split"
+		"AbilityName"					"creature_passive_split"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"mud_golem_rock_destroy"
 		
