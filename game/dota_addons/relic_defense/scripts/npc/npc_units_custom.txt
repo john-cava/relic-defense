@@ -1034,7 +1034,7 @@
 	//=================================================================================
 	// oh meh gerd sperder berss
 	//=================================================================================
-	"rd_round_title_boss_brood"
+	"npc_relic_boss_brood"
 	{										
 		// General
 		//----------------------------------------------------------------
@@ -1047,10 +1047,10 @@
 
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					""			// Ability 1
-		"Ability2"					""			// Ability 2
-		"Ability3"					""			// Ability 3
-		"Ability4"					""			// Ability 4
+		"Ability1"					"relic_boss_passive_common"			// Ability 1
+		"Ability2"					"relic_boss_ability_brood_webbing"			// Ability 2
+		"Ability3"					"relic_boss_ability_brood_windwalk"			// Ability 3
+		"Ability4"					"relic_boss_ability_brood_call"			// Ability 4
 
 		// Armor
 		//----------------------------------------------------------------
@@ -1059,8 +1059,8 @@
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"			"10"		// Damage range min.
-		"AttackDamageMax"			"10"		// Damage range max.	
+		"AttackDamageMin"			"100"		// Damage range min.
+		"AttackDamageMax"			"150"		// Damage range max.	
 		"AttackRate"				"3"			// Speed of attack.
 		"AttackAnimationPoint"		"0.5"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"500"		// Range within a target can be acquired.
@@ -1086,15 +1086,15 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"100"		// Base health.
+		"StatusHealth"				"5000"		// Base health.
 		"StatusHealthRegen"			"0.0"		// Health regeneration rate.
-		"StatusMana"				"0"			// Base mana.
-		"StatusManaRegen"			"0.0"		// Mana regeneration rate.		 
+		"StatusMana"				"300"			// Base mana.
+		"StatusManaRegen"			"15.0"		// Mana regeneration rate.		 
 		
 		// Vision
 		//----------------------------------------------------------------
-		"VisionDaytimeRange"		"800"		// Range of vision during day light.
-		"VisionNighttimeRange"		"800"		// Range of vision at night time.
+		"VisionDaytimeRange"		"1800"		// Range of vision during day light.
+		"VisionNighttimeRange"		"1800"		// Range of vision at night time.
 
 		// Team
 		//----------------------------------------------------------------
@@ -1136,7 +1136,7 @@
 	//=================================================================================
 	// oh meh gerd sperder berss menion
 	//=================================================================================
-	"rd_round_title_boss_brood_minion"
+	"npc_relic_bossminion_brood_spider"
 	{										
 		// General
 		//----------------------------------------------------------------
@@ -1229,3 +1229,4 @@
 		}
 	}
 }
+

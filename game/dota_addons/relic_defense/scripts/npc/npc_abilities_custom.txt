@@ -139,4 +139,134 @@
 			}
 		}
 	}
+
+	//=================================================================================================================
+	// Boss: Free Pathing/True sight
+	//=================================================================================================================
+	"relic_boss_passive_common"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"ability_scripts/boss/generic_boss_abilities"
+		"AbilityName"					"relic_boss_passive_common"
+		"AbilityTextureName"			"roshan_spell_block"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"true_sight_radius"		"1000"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Boss: Brood Place Web
+	//=================================================================================================================
+	"relic_boss_ability_brood_webbing"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"ability_scripts/boss/brood"
+		"AbilityName"					"relic_boss_ability_brood_webbing"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"broodmother_spin_web"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"web_radius"			"800"
+			}
+
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"web_regen"				"0.5 1.0 1.5 2.0 2.5"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Boss: Brood Wind Walk
+	//=================================================================================================================
+	"relic_boss_ability_brood_windwalk"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"ability_scripts/boss/brood"
+		"AbilityName"					"relic_boss_ability_brood_webbing"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"riki_permanent_invisibility"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"web_radius"			"800"
+			}
+
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"web_regen"				"0.5 1.0 1.5 2.0 2.5"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Boss: Brood Call of the Brood
+	//=================================================================================================================
+	"relic_boss_ability_brood_call"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"ability_scripts/boss/brood"
+		"AbilityName"					"relic_boss_ability_brood_webbing"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"broodmother_incapacitating_bite"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"channel_duration"		"30.0"
+			}
+
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"atk_speed_buff"		"50 100 150 200 250"
+			}
+
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bat_reduction"			"0.1 0.2 0.3 0.4 0.5"
+			}
+
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"lifesteal_pc"			"20.0 40.0 60.0 80.0 100.0"
+			}
+		}
+	}
 }
+
