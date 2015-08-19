@@ -63,14 +63,16 @@ end
 
 
 function relic_boss_modifier_common:OnAttacked(params)
-	self:KillEntIfIllu(params);
-
+	if IsServer() then
+		self:KillEntIfIllu(params);
+	end
 	return 0
 end
 --^ v THEY'RE LIKE THE DIFFERENT FUNCTIONS WITH DIFFERENT TRIGGERS WHY ARE THE PARAMS THE SAME WHAT IS THIS
 function relic_boss_modifier_common:OnAttackStart(params)
-	self:KillEntIfIllu(params);
-
+	if IsServer() then
+		self:KillEntIfIllu(params);
+	end
 	return 0
 end
 

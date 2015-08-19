@@ -1,7 +1,7 @@
 "AddonInfo"
 {
-	"holdout_example"
+	"relic_defense"
 	{
-		"MaxPlayers"		"5"
+		"MaxPlayers"		"10"
 	}
 }

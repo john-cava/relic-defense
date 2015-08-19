@@ -21,3 +21,4 @@ relic-defense.sublime-project
 game/dota_addons/relic_defense/tools_asset_info.bin
 game/dota_addons/relic_defense/tools_thumbnail_cache.bin
 content/dota_addons/relic_defense/materials/overviews/spring_relic.tga
+*.vmap
